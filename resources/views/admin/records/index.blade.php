@@ -1,3 +1,7 @@
+@extends('layouts.template')
+
+@section('title', 'the vinyl shop')
+@section('main')
 <h1>Records</h1>
 <h2>with php</h2>
 <ul>
@@ -21,3 +25,4 @@
         <li>Record {{$key}}= {!! $record !!}}}</li>
     @endforeach
 </ul>
+@endsection
