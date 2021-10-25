@@ -1,5 +1,8 @@
 <?php
 
+use App\genre;
+use App\Record;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 // to go to static page (shorter notation)
 Route::view('/', 'home');
+Route::get('shop', 'ShopController@index');
+Route::get('shop/{id}', 'ShopController@show');
 Route::view('contact-us', 'contact');
 
 // longer notation used to pass data to view
@@ -22,8 +27,24 @@ Route::prefix('admin')->group(function () {
     Route::get('records', 'Admin\RecordController@index');
 });
 
+//ter illustratie
+Route::prefix('api')->group(function() {
+    Route::get('users', function(){
+        return User::get();
+    });
+    // go to genre.php and add the function public function records() {...}
+    Route::get('records', function(){
+        return Record::with('genre')->get();
+    });
+    Route::get('genres', function(){
+        return genre::with('records')->get();
+    });
+});
 
-    // longer notation for data inserts
+
+
+
+// longer notation for data inserts
 //Route::get('/', function () {
 //    return view('home');
 //});
