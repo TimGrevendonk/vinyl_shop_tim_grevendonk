@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 Route::get('shop', 'ShopController@index');
 Route::get('shop/{id}', 'ShopController@show');
+Route::get('shop_alt', 'shopController@show_alt');
 Route::view('contact-us', 'contact');
+Route::get("itunes", "ItunesController@itunes");
 
 // longer notation used to pass data to view
 Route::prefix('admin')->group(function () {

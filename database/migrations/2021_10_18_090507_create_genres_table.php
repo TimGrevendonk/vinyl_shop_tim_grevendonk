@@ -40,6 +40,8 @@ class CreateGenresTable extends Migration
                 ['name' => 'soul',          'created_at' => now()],
             ]
         );
+
+
     }
 
     /**

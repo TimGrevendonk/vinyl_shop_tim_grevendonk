@@ -1,3 +1,16 @@
 main {
     min-height: 500px;
+    .cardShopMaster.card {
+        cursor: pointer;
+    }
+    .cardShopMaster > {
+        .card .btn, form .btn {
+            display: none;
+        }
+    }
+}
+// add to cart button out of stock
+a.btn.disabled {
+    cursor: not-allowed;
+    pointer-events: all;
 }

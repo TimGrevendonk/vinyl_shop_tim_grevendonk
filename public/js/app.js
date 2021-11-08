@@ -37348,7 +37348,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vinylShop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vinylShop */ "./resources/js/vinylShop.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
+ * includes React and other Helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Make 'VinylShop' accessible inside the HTML pages
