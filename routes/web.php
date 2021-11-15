@@ -1,6 +1,7 @@
 <?php
 
 use App\genre;
+use App\Http\Controllers\ContactUsController;
 use App\Record;
 use App\User;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,10 @@ Route::view('/', 'home');
 Route::get('shop', 'ShopController@index');
 Route::get('shop/{id}', 'ShopController@show');
 Route::get('shop_alt', 'shopController@show_alt');
-Route::view('contact-us', 'contact');
 Route::get("itunes", "ItunesController@itunes");
+Route::get("contact-us", "ContactUsController@show");
+// This post gives form content to the page.
+Route::post("contact-us", "ContactUsController@sendEmail");
 
 // longer notation used to pass data to view
 Route::prefix('admin')->group(function () {
