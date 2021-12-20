@@ -7,7 +7,7 @@
 {{--    will get the alert box --}}
     @include("shared.alert")
     @if( !session()->has('success') )
-    <form action="/contact-us" method="post">
+    <form action="/contact-us" method="post" novalidate>
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
@@ -27,8 +27,20 @@
                    class="form-control  {{ $errors->any() ? ($errors->first('email') ? 'is-invalid' : 'is-valid') : '' }}"
                    placeholder="Your email"
                    required
-                   value="{{ old("email") }}">
+                   value="{{ old("email", "jane.doe@example.com") }}">
             <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact</label>
+            <select name="contact" id="contact"
+                    class="form-control {{ $errors->any() ? ($errors->first('contact') ? 'is-invalid' : 'is-valid') : '' }}"
+                    required>
+                <option value="{{ old("contact") }}" selected>select a contact</option>
+                <option value="info@thevinylshop.com">info</option>
+                <option value="billing@thevinylshop.com">billing</option>
+                <option value="support@thevinylshop.com">support</option>
+            </select>
+            <div class="invalid-feedback">{{ $errors->first('contact') }}</div>
         </div>
         <div class="form-group">
             <label for="message">Message</label>

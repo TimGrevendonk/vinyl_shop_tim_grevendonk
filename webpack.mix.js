@@ -19,3 +19,4 @@ mix.browserSync({
     proxy: 'vinyl_shop.test',
     port: 3000
 });
+

@@ -9,8 +9,9 @@ main {
         }
     }
 }
+
 // add to cart button out of stock
-a.btn.disabled {
+a.btn.disabled, .btn[disabled] {
     cursor: not-allowed;
     pointer-events: all;
 }

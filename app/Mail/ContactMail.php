@@ -19,7 +19,6 @@ class ContactMail extends Mailable
      */
     public function __construct($request)
     {
-
         $this->request = $request;
     }
 

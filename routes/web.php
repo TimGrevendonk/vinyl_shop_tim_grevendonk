@@ -27,9 +27,22 @@ Route::get("contact-us", "ContactUsController@show");
 Route::post("contact-us", "ContactUsController@sendEmail");
 
 // longer notation used to pass data to view
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::redirect('/', '/admin/records');
-    Route::get('records', 'Admin\RecordController@index');
+    Route::resource('genres', 'Admin\GenreController');
+        // Always place the get rout before the resource route.
+    Route::get('genres2/queryGenres', 'Admin\Genre2Controller@queryGenres');
+    Route::resource('genres2', 'Admin\Genre2Controller', ['parameters' => ['genres2' => 'genre']]);
+    Route::resource('records', 'Admin\RecordController');
+    Route::resource('users', 'Admin\UserController');
+});
+
+Route::middleware(['auth'])->prefix('user')->group(function () {
+    Route::redirect('/', '/user/profile');
+    Route::get('profile', 'User\ProfileController@edit');
+    Route::post('profile', 'User\ProfileController@update');
+    Route::get('password', 'User\PasswordController@edit');
+    Route::post('password', 'User\PasswordController@update');
 });
 
 //ter illustratie
@@ -46,9 +59,6 @@ Route::prefix('api')->group(function() {
     });
 });
 
-
-
-
 // longer notation for data inserts
 //Route::get('/', function () {
 //    return view('home');
@@ -58,3 +68,7 @@ Route::prefix('api')->group(function() {
 //    return view('contact');
 //});
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

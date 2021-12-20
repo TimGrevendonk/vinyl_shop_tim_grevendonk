@@ -81,6 +81,7 @@ return [
     */
 
     'locale' => 'en',
+//    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,6 +95,7 @@ return [
     */
 
     'fallback_locale' => 'en',
+//    'fallback_locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,7 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        Barryvdh\Debugbar\ServiceProvider::class,
+//        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+//        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Json' => Facades\App\Helpers\Json::class,
         'Mask' => Facades\App\Helpers\Mask::class,
     ],

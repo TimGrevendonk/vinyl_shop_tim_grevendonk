@@ -11,6 +11,9 @@ We'll contact you as soon as possible.
 <p>
 <b>Your message:</b><br>{!! nl2br($request->message) !!}
 </p>
+<p>
+    <b>From:</b><br>{!! nl2br($request->contact) !!}
+</p>
 Thanks,<br>
 {{ env('APP_NAME') }}
 @endcomponent

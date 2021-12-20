@@ -38,6 +38,12 @@
     </div>
 @endif
 
+<style>
+    .alert button {
+        display: none;
+    }
+</style>
+
 {{--@if ($errors->any())--}}
 {{--    <div class="alert alert-danger">--}}
 {{--        <ul>--}}
